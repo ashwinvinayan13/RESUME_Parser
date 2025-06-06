@@ -1,0 +1,47 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.log
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv/
+
+
+
+# System files
+.DS_Store
+Thumbs.db
+
+
+
+# Cache & temp
+*.bak
+*.swp
+*.tmp
+.cache/
+
+# OS-specific
+*.~lock.*
+*.orig
+
+# Model files / data
+*.pt
+*.onnx
+*.pickle
+*.pkl
+*.pdf
+*.docx
+*.zip
+
+# Hugging Face cache
+~/.cache/huggingface/
+
+# Docker
+*.tar
+__docker_build__/
