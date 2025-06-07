@@ -7,8 +7,24 @@ from io import BytesIO
 
 app = FastAPI()
 
+SKILLS = [
+    "python", "java", "c++", "django", "fastapi", "flask", "html", "css", "javascript", "react", "sql", "postgresql", "mongodb", "git", "docker", "linux",
+    "pandas", "numpy", "machine learning", "deep learning", "nlp", "tensorflow", "pytorch"
+]
+
+
+def extract_skill_from_text(text: str, skills_list: list[str]) -> list[str]:
+    text_lower = text.lower()
+    found_skills = []
+
+    for skill in skills_list:
+        if skill.lower() in text_lower:
+            found_skills.append(skill)
+
+    return found_skills
+
 def extract_pdf(file):
-    doc = fitz.open(stream=file.read(), filetype="pdf")
+    doc = fitz.open(stream=file, filetype="pdf")
     text = ""
     for page in doc:
         text += page.get_text()
